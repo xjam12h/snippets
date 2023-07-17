@@ -1,0 +1,187 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"pandas":{
+		"prefix": ["import pd","import pandas"],
+		"body": "import pandas as pd",
+		"description": "データの加工・分析のモジュール"
+	},
+	"os":{
+		"prefix": ["import os"],
+		"body": "import os"
+	},
+	"numpy":{
+		"prefix": ["import numpy","import np","numpy"],
+		"body": "import numpy as np"
+	},
+	"read_csv":{
+		"prefix": ["read_csv","readCsv"],
+		"body": [
+			"${1:fileDir}=os.path.dirname(__file__)",
+			"df = pd.read_csv(${1:fileDir} + '${2:/sample.csv}',encoding='utf-8', dtype={'${3:colName1}': ${4:object}})"
+		]
+	},
+	"read_csv_set_name":{
+		"prefix": ["read_csv_set_name","readCsvSetName"],
+		"body": [
+			"${1:fileDir}=os.path.dirname(__file__)",
+			"df = pd.read_csv(${1:fileDir} + '${2:/sample.csv}',encoding='utf-8', names=['${3:colName1}'], dtype={'${3:colName1}': ${4:object}})"
+		]
+	},
+	"to_csv":{
+		"prefix": ["to_csv","toCsv"],
+		"body": [
+			"${1:fileDir}=os.path.dirname(__file__)",
+			"${2:df}.to_csv(${1:fileDir} + '${3:/sample.csv}',encoding='utf-8',index=False)"
+		]
+	},
+	"LogisticRegression":{
+		"prefix": ["import LogisticRegression"],
+		"body": "from sklearn.linear_model import LogisticRegression",
+		"description": "ロジスティック回帰"
+	},
+	"plot":{
+		"prefix": ["import plt","import pyplot","import plot"],
+		"body": "import matplotlib.pyplot as plt"
+	},
+	"showPlot":{
+		"prefix": ["figure","show_plot","shotPlot"],
+		"body": [
+			"plt.scatter(${1:x}, ${2:y})",
+			"plt.title('${3:title}')",
+			"plt.xlabel('${4:x label}')",
+			"plt.ylabel('${5:y label}')",
+			"plt.grid()",
+			"plt.show()"
+		]
+	},
+	"shape":{
+		"prefix": ["shape","np.shape"],
+		"body": "${1:arr}.shape",
+		"description": "要素数 numpy"
+	},
+	"type":{
+		"prefix": "type",
+		"body": "type(${1:obj})"
+	},
+	"dim":{
+		"prefix": ["ndim","dim"],
+		"body": "${1:arr}.ndim",
+		"description": "次元数 numpy"
+	},
+	"cast":{
+		"prefix": ["astype","cast"],
+		"body": "${1:arr1}.astype(np.${2:int32})",
+		"description": "キャスト numpy"
+	},
+	"arange":{
+		"prefix":["arange","np.arange"],
+		"body": "np.arange(${1:start}, ${2:end}, ${3:step})",
+		"description": "等差数列 numpy"
+	},
+	"range":{
+		"prefix":["range"],
+		"body": "range(${1:start}, ${2:end}, ${3:step})",
+		"description": "等差数列"
+	},
+	"reshape":{
+		"prefix": ["reshape"],
+		"body": "${1:arr1}.reshape(${2:n},${3:m})",
+		"description": "リサイズ numpy"
+	},
+	"matrix":{
+		"prefix": ["np.matrix","matrix"],
+		"body": "np.matrix(${1:list})",
+		"description": "行列 numpy"
+	},
+	"linspace":{
+		"prefix": ["np.linspace","linspace"],
+		"body": "np.linspace(${1:min}, ${2:max}, ${3:N})",
+		"description": "等分割 numpy"
+	},
+	"ravel":{
+		"prefix": ["ravel","dim1"],
+		"body": "${1:arr1}.ravel()",
+		"description": "一次元行列への変換 numpy"
+	},
+	"numVec":{
+		"prefix": ["vector","numVec"],
+		"body": "${1:arr1}.reshape(-1, 1)",
+		"description": "縦ベクトルへの変換 numpy"
+	},
+	"where":{
+		"prefix": ["np.where","where"],
+		"body": "np.where(${1:arr1} == True, 0, 1)",
+		"description": "whereによる抽出 numpy"
+	},
+	"squeeze":{
+		"prefix": ["np.squeeze","squeeze"],
+		"body": "np.squeeze(${1:arr})",
+		"description": "次元削減 numpy"
+	},
+	"LinearRegression":{
+		"prefix": ["import LinearRegression"],
+		"body": "from sklearn.linear_model import LinearRegression",
+		"description": "線形回帰"
+	},
+	"ImportDecimal":{
+		"prefix": ["import Decimal"],
+		"body": ["from decimal import Decimal, ROUND_HALF_UP"]
+	},
+	"Decimal":{
+		"prefix": ["Decimal","useDecimal"],
+		"body": [
+			"${3:ans} = Decimal(str(${1:tmp})).quantize(Decimal('${2:0.1}'), rounding=ROUND_HALF_UP)"
+		]
+	},
+	"3layerNeuralNetwork":{
+		"prefix": ["3layerNeuralNetwork"],
+		"body": [
+			"import numpy as np",
+			"def activation_func(x):",
+			"\treturn np.tanh(x)",
+			"n, p, m = map(int, input().split())",
+			"v = np.array([[float(x) for x in input().split()] for _ in range(n)])",
+			"a = np.array([float(x) for x in input().split()])",
+			"w = np.array([[float(x) for x in input().split()] for _ in range(p)])",
+			"b = np.array([float(x) for x in input().split()])",
+			"x = np.array([float(x) for x in input().split()])",
+			"h = activation_func(np.matrix(v).T@np.matrix(x).T+np.matrix(a).T)",
+			"y = np.array(activation_func(np.matrix(w).T@h+np.matrix(b).T).T)[0]",
+			"print(y)",
+		]
+	},
+	"getlinesString":{
+		"prefix": ["getlinesString"],
+		"body": [
+			"s = [list(map(str, input().split())) for i in range(${1:n})]"
+		]
+	},
+	"ChangeToExecutableFileDirectory":{
+		"prefix": ["ChangeToExecutableFileDirectory","def_ChangeToExecutableFileDirectory","func_ChangeToExecutableFileDirectory"],
+		"body": [
+			"def ChangeToExecutableFileDirectory():",
+			"\tnewDir = os.path.dirname(__file__)",
+			"\tos.chdir(newDir)",
+		]
+	},
+	"moveTargetDirectory":{
+		"prefix": ["moveTargetDirectory","def_moveTargetDirectory"],
+		"body":[
+			"def moveTargetDirectory(filepath):",
+			"\tdirectoryPath=os.path.dirname(filepath)",
+			"\tos.chdir(directoryPath)",
+		]
+	}
+}
